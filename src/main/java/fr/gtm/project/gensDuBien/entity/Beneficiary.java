@@ -7,24 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Beneficiary {
-	@Column
+	@OneToOne
+	@JoinColumn(name = "id_address", referencedColumnName = "id")
 	private Address address;
-	@Column
 	private String beneficiaryNumber;
-	@Column
 	private LocalDate birthDate;
-	@Column
 	private String firstname;
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column
 	private String lastname;
-	@Column
 	private Integer memeberFamilyNumber;
 
 	public Address getAddress() {

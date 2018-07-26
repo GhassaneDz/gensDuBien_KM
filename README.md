@@ -21,4 +21,4 @@ produits d'hygiène., couchage, vetement  )
 -faire le suivi des actions: collecte ou distribution avec la participation des béénévoles.
 
 
-Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéficiares, 
+Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéficiares, produits collectés et les événements .

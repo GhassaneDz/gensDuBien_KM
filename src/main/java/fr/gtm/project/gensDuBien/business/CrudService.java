@@ -12,34 +12,27 @@ public class CrudService<ENTITY> {
 	protected JpaRepository<ENTITY, Integer> repo;
 
 	public ENTITY create(final ENTITY entity) {
-		return this.save(entity);
+		return this.repo.save(entity);
 	}
 
 	public void delete(final Integer id) {
 		this.repo.deleteById(id);
 	}
 
-	public ENTITY edit(final ENTITY entity) {
-		if (entity.getId() == null) {
-			throw new IllegalArgumentException("Cannot update an article without its id.");
-		}
-		return this.save(entity);
-	}
-
-	public List<ENTITY> getList() {
+	public List<ENTITY> getAll() {
 		return this.repo.findAll();
 	}
 
 	public ENTITY read(final Integer id) {
-		ENTITY result = null;
-		final Optional<ENTITY> wrapper = this.repo.findById(id);
-		if (wrapper.isPresent()) {
-			result = wrapper.get();
+		ENTITY entity = null;
+		final Optional<ENTITY> opt = this.repo.findById(id);
+		if (opt.isPresent()) {
+			entity = opt.get();
 		}
-		return result;
+		return entity;
 	}
 
-	protected ENTITY save(final ENTITY entity) {
+	public ENTITY update(final ENTITY entity) {
 		return this.repo.save(entity);
 	}
 }

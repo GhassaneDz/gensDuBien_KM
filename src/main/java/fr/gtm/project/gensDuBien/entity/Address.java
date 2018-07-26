@@ -15,11 +15,8 @@ public class Address {
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
 	private String mainLine;
-
 	private String optionalLine;
-
 	private String postalCode;
 
 	public String getCity() {

@@ -7,26 +7,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Product {
-
-	@Column
+	@ManyToOne
+	@JoinColumn(name = "id_beneficiary", referencedColumnName = "id")
+	private Beneficiary beneficiary;
 	private LocalDate expirationDate;
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column
 	private String name;
-	@Column
 	private Integer numberLots;
-	@Column
 	private Integer productNumber;
-	@Column
 	private LocalDate receptionDate;
-	@Column
 	private String section;
+
+	public Beneficiary getBeneficiary() {
+		return this.beneficiary;
+	}
 
 	public LocalDate getExpirationDate() {
 		return this.expirationDate;
@@ -54,6 +56,10 @@ public class Product {
 
 	public String getSection() {
 		return this.section;
+	}
+
+	public void setBeneficiary(final Beneficiary beneficiary) {
+		this.beneficiary = beneficiary;
 	}
 
 	public void setExpirationDate(final LocalDate expirationDate) {
