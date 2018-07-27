@@ -14,21 +14,21 @@ import javax.persistence.ManyToOne;
 public class Event {
 
 	private LocalDate eventDate;
-	private Integer eventNumber;
+	private String eventNumber;
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String type;
 	@ManyToOne
-	@JoinColumn(name = "id_event", referencedColumnName = "id")
-	private Volunteer volenteer;
+	@JoinColumn(name = "id_volunteer", referencedColumnName = "id")
+	private Volunteer volunteer;
 
 	public LocalDate getEventDate() {
 		return this.eventDate;
 	}
 
-	public Integer getEventNumber() {
+	public String getEventNumber() {
 		return this.eventNumber;
 	}
 
@@ -40,15 +40,15 @@ public class Event {
 		return this.type;
 	}
 
-	public Volunteer getVolenteer() {
-		return this.volenteer;
+	public Volunteer getVolunteer() {
+		return this.volunteer;
 	}
 
 	public void setEventDate(final LocalDate eventDate) {
 		this.eventDate = eventDate;
 	}
 
-	public void setEventNumber(final Integer eventNumber) {
+	public void setEventNumber(final String eventNumber) {
 		this.eventNumber = eventNumber;
 	}
 
@@ -60,8 +60,8 @@ public class Event {
 		this.type = type;
 	}
 
-	public void setVolenteer(final Volunteer volenteer) {
-		this.volenteer = volenteer;
+	public void setVolunteer(final Volunteer volunteer) {
+		this.volunteer = volunteer;
 	}
 
 }

@@ -11,7 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Volunteer {
+public class Manager {
+
 	@OneToOne
 	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private Address address;
@@ -24,9 +25,9 @@ public class Volunteer {
 	private Integer id;
 	private String lastname;
 	private String login;
+	private String managerNumber;
 	private String password;
 	private String tel;
-	private String volunteerNumber;
 
 	public Address getAddress() {
 		return this.address;
@@ -56,16 +57,16 @@ public class Volunteer {
 		return this.login;
 	}
 
+	public String getManagerNumber() {
+		return this.managerNumber;
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
 
 	public String getTel() {
 		return this.tel;
-	}
-
-	public String getVolunteerNumber() {
-		return this.volunteerNumber;
 	}
 
 	public void setAddress(final Address address) {
@@ -96,16 +97,16 @@ public class Volunteer {
 		this.login = login;
 	}
 
+	public void setManagerNumber(final String managerNumber) {
+		this.managerNumber = managerNumber;
+	}
+
 	public void setPassword(final String password) {
 		this.password = password;
 	}
 
 	public void setTel(final String tel) {
 		this.tel = tel;
-	}
-
-	public void setVolunteerNumber(final String volunteerNumber) {
-		this.volunteerNumber = volunteerNumber;
 	}
 
 }

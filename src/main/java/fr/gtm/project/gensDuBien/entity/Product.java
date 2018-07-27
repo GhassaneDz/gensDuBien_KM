@@ -22,7 +22,7 @@ public class Product {
 	private Integer id;
 	private String name;
 	private Integer numberLots;
-	private Integer productNumber;
+	private String productNumber;
 	private LocalDate receptionDate;
 	private String section;
 
@@ -46,7 +46,7 @@ public class Product {
 		return this.numberLots;
 	}
 
-	public Integer getProductNumber() {
+	public String getProductNumber() {
 		return this.productNumber;
 	}
 
@@ -78,7 +78,7 @@ public class Product {
 		this.numberLots = numberLots;
 	}
 
-	public void setProductNumber(final Integer productNumber) {
+	public void setProductNumber(final String productNumber) {
 		this.productNumber = productNumber;
 	}
 
