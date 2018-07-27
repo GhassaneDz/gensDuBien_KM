@@ -102,7 +102,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>gensDuBien</finalName>
+		<finalName>gensdubien</finalName>
 	</build>
 
 </project>

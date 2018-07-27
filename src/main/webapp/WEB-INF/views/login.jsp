@@ -10,7 +10,7 @@
 		<h2>Veuillez vous authenitifier</h2>
 		<form action="<c:url value="/login"/>" method="post">
 			<div class="form-group">
-				<label for="login">Login Volentaire</label> <input id="login"
+				<label for="login">Login Volontaire</label> <input id="login"
 					name="username" required />
 			</div>
 			<div class="form-group">

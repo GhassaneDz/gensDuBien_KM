@@ -16,7 +16,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>fr.gtm.project.gensDuBien</param-value>
+			<param-value>fr.gtm.project.gensdubien</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

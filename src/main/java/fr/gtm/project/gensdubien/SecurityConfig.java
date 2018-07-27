@@ -1,4 +1,4 @@
-package fr.gtm.project.gensDuBien;
+package fr.gtm.project.gensdubien;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private fr.gtm.project.gensDuBien.business.AuthService authService;
+	private fr.gtm.project.gensdubien.business.AuthService authService;
 
 	@Bean
 	public AuthenticationProvider authenticationProvider() {

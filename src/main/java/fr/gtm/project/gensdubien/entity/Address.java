@@ -1,4 +1,4 @@
-package fr.gtm.project.gensDuBien.entity;
+package fr.gtm.project.gensdubien.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,8 +1,8 @@
-package fr.gtm.project.gensDuBien.dao;
+package fr.gtm.project.gensdubien.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.gtm.project.gensDuBien.entity.Volunteer;
+import fr.gtm.project.gensdubien.entity.Volunteer;
 
 public interface VolunteerRepository extends JpaRepository<Volunteer, Integer> {
 

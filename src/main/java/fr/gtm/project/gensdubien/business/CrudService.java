@@ -1,4 +1,4 @@
-package fr.gtm.project.gensDuBien.business;
+package fr.gtm.project.gensdubien.business;
 
 import java.util.List;
 import java.util.Optional;
