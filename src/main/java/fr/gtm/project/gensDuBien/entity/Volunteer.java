@@ -1,6 +1,8 @@
 package fr.gtm.project.gensDuBien.entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,9 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Volunteer {
+public class Volunteer implements UserDetails {
+
+	private static final long serialVersionUID = 1L;
 	@OneToOne
 	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private Address address;
@@ -30,6 +38,12 @@ public class Volunteer {
 
 	public Address getAddress() {
 		return this.address;
+	}
+
+	@Transient
+	@Override
+	public Collection<GrantedAuthority> getAuthorities() {
+		return new ArrayList<GrantedAuthority>();
 	}
 
 	public LocalDate getBirthDate() {
@@ -56,6 +70,7 @@ public class Volunteer {
 		return this.login;
 	}
 
+	@Override
 	public String getPassword() {
 		return this.password;
 	}
@@ -64,8 +79,41 @@ public class Volunteer {
 		return this.tel;
 	}
 
+	@Override
+	public String getUsername() {
+		return this.login;
+	}
+
 	public String getVolunteerNumber() {
 		return this.volunteerNumber;
+	}
+
+	@Transient
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Transient
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Transient
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Transient
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	public void setAddress(final Address address) {

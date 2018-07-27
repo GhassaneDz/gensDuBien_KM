@@ -6,4 +6,6 @@ import fr.gtm.project.gensDuBien.entity.Volunteer;
 
 public interface VolunteerRepository extends JpaRepository<Volunteer, Integer> {
 
+	Volunteer findOneByLogin(final String login);
+
 }
