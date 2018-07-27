@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 27 juil. 2018 à 09:19
+-- Généré le :  ven. 27 juil. 2018 à 11:12
 -- Version du serveur :  10.1.33-MariaDB
 -- Version de PHP :  7.2.6
 
@@ -94,34 +94,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `eventDate`, `eventNumber`, `type`, `id_volunteer`) VALUES
-(1, '2018-09-01', '20180023', 'Collecte', 2),
-(2, '2018-09-13', '20180024', 'Distribution', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `manager`
---
-
-CREATE TABLE `manager` (
-  `id` int(11) NOT NULL,
-  `birthDate` date DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `firstname` varchar(255) DEFAULT NULL,
-  `lastname` varchar(255) DEFAULT NULL,
-  `login` varchar(255) DEFAULT NULL,
-  `managerNumber` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `tel` varchar(255) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `manager`
---
-
-INSERT INTO `manager` (`id`, `birthDate`, `email`, `firstname`, `lastname`, `login`, `managerNumber`, `password`, `tel`, `address_id`) VALUES
-(1, '1985-04-17', 'momo@gmail.com', 'Mohammed', 'KHEZNADJI', 'gensdubien75', '20170001', 'gdbmomo', '0661308811', 1);
+(1, '2018-09-01', '20180235', 'Collecte', 2),
+(2, '2018-09-13', '20180236', 'Distribution', 1);
 
 -- --------------------------------------------------------
 
@@ -160,20 +134,20 @@ CREATE TABLE `volunteer` (
   `email` varchar(255) DEFAULT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
+  `login` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `tel` varchar(255) DEFAULT NULL,
   `volunteerNumber` varchar(255) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL,
-  `login` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `address_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `volunteer`
 --
 
-INSERT INTO `volunteer` (`id`, `birthDate`, `email`, `firstname`, `lastname`, `tel`, `volunteerNumber`, `address_id`, `login`, `password`) VALUES
-(1, '1985-04-17', 'matrin@gmail.com', 'Martin', 'TOTO', '06111111', '20180001', 5, NULL, NULL),
-(2, '1975-02-17', 'laurent@gmail.com', 'Laurent', 'KOKO', '06222222', '20180002', 1, NULL, NULL);
+INSERT INTO `volunteer` (`id`, `birthDate`, `email`, `firstname`, `lastname`, `login`, `password`, `tel`, `volunteerNumber`, `address_id`) VALUES
+(1, '1985-04-17', 'matrin@gmail.com', 'Martin', 'TOTO', NULL, NULL, '06111111', '20180001', 5),
+(2, '1975-02-17', 'laurent@gmail.com', 'Laurent', 'KOKO', NULL, NULL, '06222222', '20180002', 1);
 
 --
 -- Index pour les tables déchargées
@@ -198,13 +172,6 @@ ALTER TABLE `beneficiary`
 ALTER TABLE `event`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK5k7sl10xjt06m2pgqv6rl2lp8` (`id_volunteer`);
-
---
--- Index pour la table `manager`
---
-ALTER TABLE `manager`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FKbfcw9hun3e6rnb5vqtvo5uf4l` (`address_id`);
 
 --
 -- Index pour la table `product`
@@ -243,12 +210,6 @@ ALTER TABLE `event`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `manager`
---
-ALTER TABLE `manager`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
@@ -275,12 +236,6 @@ ALTER TABLE `beneficiary`
 --
 ALTER TABLE `event`
   ADD CONSTRAINT `FK5k7sl10xjt06m2pgqv6rl2lp8` FOREIGN KEY (`id_volunteer`) REFERENCES `volunteer` (`id`);
-
---
--- Contraintes pour la table `manager`
---
-ALTER TABLE `manager`
-  ADD CONSTRAINT `FKbfcw9hun3e6rnb5vqtvo5uf4l` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
 
 --
 -- Contraintes pour la table `product`
