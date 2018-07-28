@@ -20,11 +20,11 @@
 			</div>
 		</div>
 
-		<div class="row justify-content-center mt-5">
+		<div class="row justify-content-center ">
 			<h2>Bienvenue "les gens du bien", veuillez saisir votre login et
 				mot de passe :</h2>
 		</div>
-		<div class="row justify-content-center">
+		<div class="row justify-content-center mt-2">
 			<div class="col-6">
 				<form>
 					<div class="form-group">
@@ -37,11 +37,11 @@
 							type="password" class="form-control" id="exampleInputPassword1"
 							placeholder="Votre mot de passe">
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary">Valider</button>
 				</form>
 			</div>
 		</div>
 	</div>
 	<div class="d-flex align-items-center justify-content-center"></div>
-</body>
-</html>
+	
+<%@ include file="templates/footer.jsp"%>

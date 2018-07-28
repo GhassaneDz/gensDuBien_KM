@@ -7,6 +7,5 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-</body>
-</html>
+<p>test</p>
+<%@ include file="templates/footer.jsp"%>

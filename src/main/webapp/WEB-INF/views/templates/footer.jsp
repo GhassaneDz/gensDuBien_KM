@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<!-- Footer -->
+	<footer class="page-footer font-small red">
 
-<div class="navbar navbar-light bg-dark fixed-bottom">
-	<h3><a href="<c:url value="/disconnect.html" />">Retour Ã  l'accueil</a></h3>
-	<div class="logout"><a href="<c:url value="/logout"/>">  deconnexion </a>  </div>
-</div>
+		<!-- Copyright -->
+		<div class="footer-copyright text-center text-white fixed-bottom bg-primary py-3">©2018 Copyright: MKheznadji Production</div>
+		<!-- Copyright -->
+
+</body>
+
+</html>
