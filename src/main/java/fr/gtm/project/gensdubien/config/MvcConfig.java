@@ -1,4 +1,4 @@
-package fr.gtm.project.gensdubien;
+package fr.gtm.project.gensdubien.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -39,7 +38,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		final PlatformTransactionManager tm = new JpaTransactionManager(this.entityManagerFactory().getObject());
 		return tm;
 	}
-	
+
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		final InternalResourceViewResolver bean = new InternalResourceViewResolver();

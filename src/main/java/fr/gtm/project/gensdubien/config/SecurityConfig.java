@@ -1,4 +1,4 @@
-package fr.gtm.project.gensdubien;
+package fr.gtm.project.gensdubien.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
