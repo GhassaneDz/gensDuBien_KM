@@ -4,12 +4,8 @@ Mon application : GensDuBien
 
 
 GenDuBien est un réseau d'associations basé en Algérie composé de jeunes ambicieux et de vrais exemples dans la  lutte  contre la pauvreté.
-
-
-
 Mise en situation et définition du besoin : 
 cette application permet aux gérants des antennes ou à un des bénévoles de l'association "Gens du Bien " de: 
-
 
 - créer , gérer la liste des bénévoles
 (id, nom , prenom, adresse, telephone, email, numero bénévole)
@@ -22,3 +18,5 @@ produits d'hygiène., couchage, vetement  )
 
 
 Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéficiares, produits collectés et les événements .
+
+Login: mohammed   mot de passe: boukadir 

@@ -11,7 +11,10 @@
 
 <link rel="stylesheet" href="${cssUrl}/bootstrap.min.css">
 <link rel="stylesheet" href="${cssUrl}/stepbystep-form.css">
-
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 <c:if test="${ not empty volunteer }">
 	<title>${volunteer.firstname} ${volunteer.lastname}</title>
 </c:if>
