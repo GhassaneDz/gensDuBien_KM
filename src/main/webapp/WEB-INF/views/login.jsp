@@ -35,6 +35,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 	<div class="d-flex align-items-center justify-content-center"></div>
 
 	<footer class="page-footer font-small blue">
@@ -42,8 +44,7 @@
 
 		<!-- Copyright -->
 		<div
-			class="footer-copyright text-center text-white fixed-bottom bg-primary ">
-			<div></div>
+			class="footer-copyright text-center text-white fixed-bottom bg-primary py-3 ">
 			<p>©2018 Copyright: MKheznadji Production</p>
 		</div>
 		<!-- Copyright -->
