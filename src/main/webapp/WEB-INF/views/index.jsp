@@ -8,19 +8,18 @@
 </head>
 <body>
 
-
-
 	<div class="container-fluid">
+		<h1>Liste des services</h1>
 		<div class="row">
 			<div class="col-sm">
 				<ul class="nav flex-column">
-					<li class="nav-item"><a class="nav-link"
+					<li class="nav-item"><a class="nav-link" 
 						href="<c:url value='/benevole.html' />">Gérer les bénévoles</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="<c:url value="/beneficiaire.html" />"> Gérer les
 							bénéficiares</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/produit.html" />">Gérer les dons</a></li>
+						href="<c:url value="/produit.html" />">Gérer les produits collectés</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="<c:url value="/evenement.html" />">Gérer les événements</a></li>
 					<li class="nav-item"><a class="nav-link disabled" />Emailing</a></li>
@@ -42,10 +41,10 @@
 
 
 						<div class="card-body">
-							<h5 class="card-title">${event.type}du ${event.eventDate}</h5>
+							<h5 class="card-title">${event.type} du ${event.eventDate}</h5>
 							<p class="card-text">Some quick example text to build on the
 								card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<a href="<c:url value="/evenement.html" />"" class="btn btn-primary">Aller à événement</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -55,8 +54,21 @@
 	</div>
 
 
+	
+	<div class="d-flex align-items-center justify-content-center"></div>
+	<footer class="page-footer font-small blue">
+	
+	
+		<!-- Copyright -->
+		<div class="footer-copyright text-center text-white fixed-bottom bg-primary py-3 d-flex justify-content-between">
+			<div></div>
+			<p>©2018 Copyright: MKheznadji Production </p>
+			<button class="btn btn-warning mr-2 ">
+				<a href="<c:url value="/logout" />">Déconnexion</a>
+			</button>
+		</div>
+		<!-- Copyright -->
 
-
-<jsp:include page="templates/footer.jsp" />
+</footer>
 </body>
 </html>

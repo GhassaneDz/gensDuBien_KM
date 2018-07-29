@@ -10,7 +10,9 @@
 	
 		<!-- Copyright -->
 		<div class="footer-copyright text-center text-white fixed-bottom bg-primary py-3 d-flex justify-content-between">
-			<div></div>
+			<button class="btn btn-warning mr-2 ">
+				<a href="<c:url value="/disconnect.html" />">Retour à l'accueil</a>
+			</button>
 			<p>©2018 Copyright: MKheznadji Production </p>
 			<button class="btn btn-warning mr-2 ">
 				<a href="<c:url value="/logout" />">Déconnexion</a>
