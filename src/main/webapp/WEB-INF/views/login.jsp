@@ -23,7 +23,7 @@
 			<div class="col-6">
 				<form action="<c:url value="/login"/>" method="post">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Login</label> <input id="login"
+						<label >Login</label> <input id="login"
 							name="username" required>
 					</div>
 					<div class="form-group">

@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:url value="/benevole/delete.html?id=" var="deleteUrl" />
+<c:url value="/benevole/create.html" var="createUrl" />
+<c:url value="/img" var="imgUrl" />
 <div class="container-fluid">
 	<h1>Liste des bénévoles</h1>
 	<div class="row">
@@ -26,7 +29,6 @@
 							<th scope="col">Date de naissance</th>
 							<th scope="col">email</th>
 							<th scope="col">téléphone</th>
-							<th scope="col">Adresse</th>
 							<th scope="col">Mise à jour</th>
 							<th scope="col">Suppression</th>
 
@@ -42,9 +44,15 @@
 								<td>${volunteer.birthDate}</td>
 								<td>${volunteer.email}</td>
 								<td>${volunteer.tel}</td>
-								<td>${volunteer.address}</td>
-									<td> <img src="img/Text-Edit-icon.png" alt="" class="img-fluid mid-logo logo-action"></td>
-								<td><img src="img/trash-512.png" alt="" class="img-fluid mid-logo logo-action"></td>
+									<td> 
+									<img src="${imgUrl}/Text-Edit-icon.png"  alt="" class="img-fluid mid-logo logo-action" >
+									</td>
+								<td>
+								<a href="${deleteUrl}${volunteer.id}">
+								<img  src="${imgUrl}/trash-512.png" alt="" class="img-fluid mid-logo logo-action" >
+								</a>
+							
+								</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -53,41 +61,30 @@
 		</div>
 		<div class="col-3">
 			<h1>Formulaire d'ajout</h1>
-		<form>
+		<form method="post" action="${createUrl }">
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le numéro du bénévole"> 
+							type="text" class="form-control"  name="volunteerNumber" placeholder="saisir le numéro du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le prénom du bénévole"> 
+							type="text" class="form-control"  name="firstname" placeholder="saisir le prénom du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le nom du bénévole"> 
+							type="text" class="form-control" name="lastname"  placeholder="saisir le nom du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir la date de naissance de bénévole"> 
+							type="date" class="form-control" name="birthDate" placeholder="saisir la date de naissance de bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le nombre des membres de famille"> 
+							type="text" class="form-control" name = "email" placeholder="saisir l'email"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le téléphone du bénévole"> 
-					</div>
-					<div class="form-group">
-						<input
-							type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir l'adresse du bénévole"> 
+							type="text" class="form-control" name="tel" placeholder="saisir le téléphone du bénévole"> 
 					</div>
 					
 					<button type="submit" class="btn btn-primary">Valider</button>

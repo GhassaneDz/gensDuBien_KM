@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<c:url value="/produit/delete.html?id=" var="deleteUrl" />
+	<c:url value="/produit/create.html" var="createUrl" />
+	<c:url value="/img" var="imgUrl" />
 	<div class="container-fluid">
 		<h1>Liste des produits collectés</h1>
 		<div class="row">
@@ -41,10 +44,14 @@
 									<td>${product.receptionDate}</td>
 									<td>${product.expirationDate}</td>
 									<td>${product.numberLots}</td>
-									<td><img src="img/Text-Edit-icon.png" alt=""
-										class="img-fluid mid-logo logo-action"></td>
-									<td><img src="img/trash-512.png" alt=""
-										class="img-fluid mid-logo logo-action"></td>
+									<td>
+										<img src="${imgUrl}/Text-Edit-icon.png" alt="" class="img-fluid mid-logo logo-action">
+									</td>
+									<td>
+										<a href="${deleteUrl}${product.id}">
+											<img src="${imgUrl}/trash-512.png" alt="" class="img-fluid mid-logo logo-action">
+										</a>
+									</td>
 								</tr>
 							</tbody>
 						</c:forEach>
@@ -53,34 +60,29 @@
 			</div>
 			<div class="col-3">
 				<h1>Formulaire d'ajout</h1>
-				<form>
+				<form method="post" action="${createUrl }">
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp"
+						<input type="text" class="form-control" name="name"
 							placeholder="saisir le produit collecté">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp" placeholder="saisir le rayon">
+						<input type="text" class="form-control" name="section"
+							placeholder="saisir le rayon">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp"
+						<input type="text" class="form-control" name="productNumber"
 							placeholder="saisir le numéro du produit">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp"
+						<input type="date" class="form-control" name="receptionDate"
 							placeholder="saisir la date de réception">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp"
+						<input type="date" class="form-control" name="expirationDate"
 							placeholder="saisir la date d'expiration">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="exampleInputEmail1"
-							aria-describedby="emailHelp"
+						<input type="text" class="form-control" name="numberLots"
 							placeholder="saisir le nombre de lots du produit">
 					</div>
 

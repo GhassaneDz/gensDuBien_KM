@@ -9,6 +9,12 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", country=" + country + ", id=" + id + ", mainLine=" + mainLine
+				+ ", optionalLine=" + optionalLine + ", postalCode=" + postalCode + "]";
+	}
+
 	private String city;
 	private String country;
 	@Id

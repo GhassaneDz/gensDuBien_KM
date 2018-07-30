@@ -14,14 +14,14 @@
 			<div class="col-sm">
 				<ul class="nav flex-column">
 					<li class="nav-item"><a class="nav-link" 
-						href="<c:url value='/benevole.html' />">Gérer les bénévoles</a></li>
+						href="<c:url value="/benevole/list.html" />">Gérer les bénévoles</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/beneficiaire.html" />"> Gérer les
+						href="<c:url value="/beneficiaire/list.html" />"> Gérer les
 							bénéficiares</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/produit.html" />">Gérer les produits collectés</a></li>
+						href="<c:url value="/produit/list.html" />">Gérer les produits collectés</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/evenement.html" />">Gérer les événements</a></li>
+						href="<c:url value="/evenement/list.html" />">Gérer les événements</a></li>
 					<li class="nav-item"><a class="nav-link disabled" />Emailing</a></li>
 				</ul>
 
@@ -44,7 +44,7 @@
 							<h5 class="card-title">${event.type} du ${event.eventDate}</h5>
 							<p class="card-text">Some quick example text to build on the
 								card title and make up the bulk of the card's content.</p>
-							<a href="<c:url value="/evenement.html" />"" class="btn btn-primary">Aller à événement</a>
+							<a href="<c:url value="/evenement/list.html" />"" class="btn btn-primary">Aller à événement</a>
 						</div>
 					</div>
 				</c:forEach>

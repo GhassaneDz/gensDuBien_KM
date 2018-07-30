@@ -6,5 +6,7 @@ import fr.gtm.project.gensdubien.entity.Event;
 
 @Service
 public class EventService extends CrudService<Event> {
+	
+	
 
 }
