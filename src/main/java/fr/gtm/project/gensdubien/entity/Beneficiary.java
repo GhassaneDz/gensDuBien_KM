@@ -23,7 +23,7 @@ public class Beneficiary {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String lastname;
-	private String memeberFamilyNumber;
+	private String memberFamilyNumber;
 	private String tel;
 
 	public Address getAddress() {
@@ -50,8 +50,8 @@ public class Beneficiary {
 		return this.lastname;
 	}
 
-	public String getMemeberFamilyNumber() {
-		return this.memeberFamilyNumber;
+	public String getMemberFamilyNumber() {
+		return this.memberFamilyNumber;
 	}
 
 	public String getTel() {
@@ -82,8 +82,8 @@ public class Beneficiary {
 		this.lastname = lastname;
 	}
 
-	public void setMemeberFamilyNumber(final String memeberFamilyNumber) {
-		this.memeberFamilyNumber = memeberFamilyNumber;
+	public void setMemberFamilyNumber(final String memberFamilyNumber) {
+		this.memberFamilyNumber = memberFamilyNumber;
 	}
 
 	public void setTel(final String tel) {

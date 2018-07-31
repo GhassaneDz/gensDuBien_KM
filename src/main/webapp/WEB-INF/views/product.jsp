@@ -11,6 +11,7 @@
 <body>
 	<c:url value="/produit/delete.html?id=" var="deleteUrl" />
 	<c:url value="/produit/create.html" var="createUrl" />
+	<c:url value="/produit/edit.html?id=" var="editUrl" />
 	<c:url value="/img" var="imgUrl" />
 	<div class="container-fluid">
 		<h1>Liste des produits collectés</h1>
@@ -45,7 +46,10 @@
 									<td>${product.expirationDate}</td>
 									<td>${product.numberLots}</td>
 									<td>
-										<img src="${imgUrl}/Text-Edit-icon.png" alt="" class="img-fluid mid-logo logo-action">
+									<a href="${editUrl}${product.id}"> 
+										<img src="${imgUrl}/Text-Edit-icon.png" alt=""
+										 class="img-fluid mid-logo logo-action">
+									</a>
 									</td>
 									<td>
 										<a href="${deleteUrl}${product.id}">
@@ -61,28 +65,38 @@
 			<div class="col-3">
 				<h1>Formulaire d'ajout</h1>
 				<form method="post" action="${createUrl }">
+				<c:if test="${not empty product}">
+				<input type="hidden" name="id" value="${product.id}" 
+				placeholder="saisir le numéro de l'événement"> 
+				</c:if>
 					<div class="form-group">
-						<input type="text" class="form-control" name="name"
-							placeholder="saisir le produit collecté">
+						<input type="text" class="form-control" name="name" 
+						value="${not empty product? product.name: '' }"
+							placeholder="saisir le id">
 					</div>
 					<div class="form-group">
 						<input type="text" class="form-control" name="section"
+						 value="${not empty product? product.section: '' }"
 							placeholder="saisir le rayon">
 					</div>
 					<div class="form-group">
 						<input type="text" class="form-control" name="productNumber"
+						 value="${not empty product? product.productNumber: '' }"
 							placeholder="saisir le numéro du produit">
 					</div>
 					<div class="form-group">
-						<input type="date" class="form-control" name="receptionDate"
+						<input type="date" class="form-control" name="receptionDate" 
+						value="${not empty product? product.receptionDate: '' }"
 							placeholder="saisir la date de réception">
 					</div>
 					<div class="form-group">
 						<input type="date" class="form-control" name="expirationDate"
+						 value="${not empty product? product.expirationDate: '' }"
 							placeholder="saisir la date d'expiration">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="numberLots"
+						<input type="text" class="form-control" name="numberLots" 
+						value="${not empty product? product.numberLots: '' }"
 							placeholder="saisir le nombre de lots du produit">
 					</div>
 

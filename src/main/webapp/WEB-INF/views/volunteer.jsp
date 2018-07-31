@@ -11,6 +11,7 @@
 <body>
 <c:url value="/benevole/delete.html?id=" var="deleteUrl" />
 <c:url value="/benevole/create.html" var="createUrl" />
+<c:url value="/benevole/edit.html?id=" var="editUrl" />
 <c:url value="/img" var="imgUrl" />
 <div class="container-fluid">
 	<h1>Liste des bénévoles</h1>
@@ -45,7 +46,10 @@
 								<td>${volunteer.email}</td>
 								<td>${volunteer.tel}</td>
 									<td> 
+									<a href="${editUrl}${volunteer.id}">
+									
 									<img src="${imgUrl}/Text-Edit-icon.png"  alt="" class="img-fluid mid-logo logo-action" >
+									</a>
 									</td>
 								<td>
 								<a href="${deleteUrl}${volunteer.id}">
@@ -62,29 +66,48 @@
 		<div class="col-3">
 			<h1>Formulaire d'ajout</h1>
 		<form method="post" action="${createUrl }">
+			<c:if test="${not empty volunteer }">
+			
+						<input type="hidden" name="id" value="${volunteer.id}"
+							placeholder="saisir le id">
+
+					</c:if>
+		
 					<div class="form-group">
 						<input
-							type="text" class="form-control"  name="volunteerNumber" placeholder="saisir le numéro du bénévole"> 
+							type="text" class="form-control"  name="volunteerNumber" 
+							value="${not empty volunteer? volunteer.volunteerNumber: ''}"
+							placeholder="saisir le numéro du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control"  name="firstname" placeholder="saisir le prénom du bénévole"> 
+							type="text" class="form-control"  name="firstname"
+							value="${not empty volunteer? volunteer.firstname: ''}"
+							 placeholder="saisir le prénom du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="lastname"  placeholder="saisir le nom du bénévole"> 
+							type="text" class="form-control" name="lastname"  
+							value="${not empty volunteer? volunteer.lastname: ''}"
+							placeholder="saisir le nom du bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="date" class="form-control" name="birthDate" placeholder="saisir la date de naissance de bénévole"> 
+							type="date" class="form-control" name="birthDate" 
+								value="${not empty volunteer? volunteer.birthDate: ''}"
+							placeholder="saisir la date de naissance de bénévole"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name = "email" placeholder="saisir l'email"> 
+							type="text" class="form-control" name = "email" 
+						value="${not empty volunteer? volunteer.email: ''}"
+							placeholder="saisir l'email"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="tel" placeholder="saisir le téléphone du bénévole"> 
+							type="text" class="form-control" name="tel"
+							value="${not empty event? event.tel: ''}"
+							 placeholder="saisir le téléphone du bénévole"> 
 					</div>
 					
 					<button type="submit" class="btn btn-primary">Valider</button>

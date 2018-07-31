@@ -3,6 +3,7 @@ package fr.gtm.project.gensdubien.web;
 import java.time.LocalDate;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import fr.gtm.project.gensdubien.business.BeneficiaryService;
 import fr.gtm.project.gensdubien.entity.Beneficiary;
 @Controller
@@ -39,19 +40,38 @@ public class BenefiaciaryController {
 		this.service.delete(id);
 		return "redirect:/beneficiaire/list.html" ;
 	}
-	@PostMapping ("/create")
-	public String validateForm(@RequestParam String memeberFamilyNumber, @RequestParam String firstname,
-			@RequestParam String lastname, @RequestParam String tel, String beneficiaryNumber,
-			@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate birthDate) {
+	@PostMapping ({"/create", "update"})
+	public String validateForm(
+			@RequestParam String memberFamilyNumber, 
+			@RequestParam String firstname,
+			@RequestParam String lastname,
+			@RequestParam String tel, String beneficiaryNumber,
+			@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate birthDate,
+			@RequestParam(required=false) Integer id) {
+			Beneficiary beneficiary = new Beneficiary();
 	
-		Beneficiary beneficiary = new Beneficiary();
+	      if (id==null) {
+		     service.create(beneficiary);
+	      }else {
+	    	  
+	    	  beneficiary.setId(id);
+	    	  service.update(beneficiary);
+	      }
+	
 		beneficiary .setBirthDate(birthDate);
 		beneficiary .setFirstname(firstname);
 		beneficiary .setLastname(lastname);
-		beneficiary .setMemeberFamilyNumber(memeberFamilyNumber);;
+		beneficiary .setMemberFamilyNumber(memberFamilyNumber);;
 		beneficiary .setTel(tel);
 		beneficiary.setBeneficiaryNumber(beneficiaryNumber);
 		service.create(beneficiary);
+		return "redirect:/beneficiaire/list.html";
+	}
+	
+	@RequestMapping("/edit")
+	public String edit(@RequestParam Integer id, RedirectAttributes ra) {
+		Beneficiary beneficiary=service.read(id);
+		ra.addFlashAttribute("beneficiary", beneficiary);
 		return "redirect:/beneficiaire/list.html";
 	}
 }

@@ -11,6 +11,7 @@
 <body>
 <c:url value="/beneficiaire/delete.html?id=" var="deleteUrl" />
 <c:url value="/beneficiaire/create.html" var="createUrl" />
+<c:url value="/beneficiaire/edit.html?id=" var="editUrl" />
 <c:url value="/img" var="imgUrl" />
 	<div class="container-fluid">
 		<h1>Liste des bénéficiares</h1>
@@ -29,7 +30,6 @@
 								<th scope="col">Date de naissance</th>
 								<th scope="col">Nombre des membres de famille</th>
 								<th scope="col">Téléphone</th>
-								<th scope="col">Adresse</th>
 								<th scope="col">Mise à jour</th>
 								<th scope="col">Suppression</th>
 
@@ -43,13 +43,18 @@
 									<td>${beneficiary.firstname}</td>
 									<td>${beneficiary.lastname}</td>
 									<td>${beneficiary.birthDate}</td>
-									<td>${beneficiary.memeberFamilyNumber}</td>
+									<td>${beneficiary.memberFamilyNumber}</td>
 									<td>${beneficiary.tel}</td>
 									<td>
+									<a href="${editUrl}${beneficiary.id}">
+
 									<img src="${imgUrl}/Text-Edit-icon.png"  alt=""
 										class="img-fluid mid-logo logo-action">
+									</a>
 										</td>
-									<td><a href="${deleteUrl}${beneficiary.id}">	
+										
+									<td>
+									<a href="${deleteUrl}${beneficiary.id}">	
 									<img src="${imgUrl}/trash-512.png" alt=""
 										class="img-fluid mid-logo logo-action">
 									</a>
@@ -63,29 +68,47 @@
 			<div class="col-3">
 				<h1>Formulaire d'ajout</h1>
 				<form method="post" action="${createUrl }">
+				
+						<c:if test="${not empty beneficiary }">
+						<input type="hidden" name="id" value="${beneficiary.id}"
+							placeholder="saisir le id">
+
+					</c:if>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="beneficiaryNumber" placeholder="saisir le numéro de bénéficiaire"> 
+							type="text" class="form-control" name="beneficiaryNumber" 
+							value="${not empty beneficiary? beneficiary.beneficiaryNumber: ''}"
+							placeholder="saisir le numéro de bénéficiaire"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="firstname"  placeholder="saisir le prénom du bénéficiaire"> 
+							type="text" class="form-control" name="firstname"  
+							value="${not empty beneficiary? beneficiary.firstname: ''}"
+							placeholder="saisir le prénom du bénéficiaire"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="lastname"  placeholder="saisir le nom du bénéficiaire"> 
+							type="text" class="form-control" name="lastname" 
+							value="${not empty beneficiary? beneficiary.lastname: ''}"
+							 placeholder="saisir le nom du bénéficiaire"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="date" class="form-control" name="birthDate"  placeholder="saisir la date de naissance de bénéficiaire"> 
+							type="date" class="form-control" name="birthDate"  
+							value="${not empty beneficiary? beneficiary.birthDate: ''}"
+							placeholder="saisir la date de naissance de bénéficiaire"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="memeberFamilyNumber"  placeholder="saisir le nombre des membres de famille"> 
+							type="text" class="form-control" name="memberFamilyNumber" 
+							value="${not empty beneficiary? beneficiary.memberFamilyNumber: ''}" 
+							placeholder="saisir le nombre des membres de famille"> 
 					</div>
 					<div class="form-group">
 						<input
-							type="text" class="form-control" name="tel"  placeholder="saisir le téléphone du bénéficiaire"> 
+							type="text" class="form-control" name="tel"  
+							value="${not empty beneficiary? beneficiary.tel: ''}"
+							placeholder="saisir le téléphone du bénéficiaire"> 
 					</div>
 					
 					<button type="submit" class="btn btn-primary">Valider</button>

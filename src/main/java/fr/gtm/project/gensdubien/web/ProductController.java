@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.gtm.project.gensdubien.business.ProductService;
 import fr.gtm.project.gensdubien.entity.Product;
@@ -38,17 +39,24 @@ public class ProductController {
 		return "redirect:/produit/list.html" ;
 		
 	}
-	@PostMapping ("/create")
+	@PostMapping ({"/create", "/update"})
 	public String validateForm( 
 			@RequestParam String name, 
 			@RequestParam Integer numberLots,
 			@RequestParam String productNumber, 
 			@DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate expirationDate, 
 	        @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam LocalDate receptionDate, 
-	        @RequestParam String section
-			) {
+	        @RequestParam String section,
+	    	@RequestParam(required=false) Integer id ) {
+		
 	
 		Product product = new Product();
+		if (id==null) {
+			service.create(product);
+		}else {
+			product.setId(id);
+			service.update(product);
+		}
 		product.setName(name);
 		product.setSection(section);
 		product.setProductNumber(productNumber);
@@ -58,4 +66,14 @@ public class ProductController {
 		service.create(product);
 		return "redirect:/produit/list.html";
 	}
+	
+	
+@RequestMapping("/edit")
+public String edit(@RequestParam Integer id, RedirectAttributes ra) {
+	Product product= service.read(id);
+	ra.addFlashAttribute("product", product);
+	return "redirect:/produit/list.html";
+}
+	
+	
 }
