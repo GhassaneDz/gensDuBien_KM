@@ -1,22 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.8.1
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le :  ven. 27 juil. 2018 à 11:12
--- Version du serveur :  10.1.33-MariaDB
--- Version de PHP :  7.2.6
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `gensdubien`
@@ -146,8 +127,8 @@ CREATE TABLE `volunteer` (
 --
 
 INSERT INTO `volunteer` (`id`, `birthDate`, `email`, `firstname`, `lastname`, `login`, `password`, `tel`, `volunteerNumber`, `address_id`) VALUES
-(1, '1985-04-17', 'matrin@gmail.com', 'Martin', 'TOTO', NULL, NULL, '06111111', '20180001', 5),
-(2, '1975-02-17', 'laurent@gmail.com', 'Laurent', 'KOKO', NULL, NULL, '06222222', '20180002', 1);
+(1, '1985-04-17', 'momo@gmail.com', 'Mohammed', 'MOMO', 'Mohammed', '$2a$10$9xRP44XK1dNTtzLBE5Ww6.UhoQ4WcEhyPc5xD9BpUTJbh9XJk6pnO', '06111111', '20180001', 5),
+(2, '1975-02-17', 'fofo@gmail.com', 'Frederic', 'FOFO', 'Frederic', '$2a$10$EMPf5H1sI7uJIlkysBgiV.ZNJr.PohPbRJMqhgx7QkSpha7NQU.fi', '06222222', '20180002', 1);
 
 --
 -- Index pour les tables déchargées
@@ -250,6 +231,4 @@ ALTER TABLE `volunteer`
   ADD CONSTRAINT `FKkj6qq780x0ef0t81yr3o4w50l` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
