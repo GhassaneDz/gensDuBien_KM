@@ -1,7 +1,6 @@
 # Bienvenue sur gensdubien_KM
 * Date : 30/07/2018
-* Créateurs :  Mohammed KHEZNADJI 
-
+* Créateur :  Mohammed KHEZNADJI 
 
 GenDuBien est un réseau d'associations basé en Algérie composé de jeunes ambicieux et de vrais exemples dans la  lutte  contre la pauvreté.
 Mise en situation et définition du besoin : 
@@ -38,8 +37,8 @@ Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéfic
 
 # Exemple d'utilisation
 ### 1- Une fois l'application lancée, vous pouvez accéder à l'application en se connectant via l'un des deux logins suivants :
-login: Mohammed      mot de passe: Alger
-login: Frederic      mot de passe: Paris
+*login: Mohammed      mot de passe: Alger
+*login: Frederic      mot de passe: Paris
 ### 2- Une fois connecté vous pouvez gérer les bénéficiaires , les bénévoles,  les produits collectés , et les événements
 
 # =======================================
