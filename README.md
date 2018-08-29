@@ -21,7 +21,7 @@ produits d'hygiène., couchage, vetement  )
 -faire le suivi des actions: collecte ou distribution avec la participation des béénévoles.
 
 Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéficiares, produits collectés et les événements .
-# ===================================================
+# ========================================
 
 # Lancement de l'application
 
@@ -39,8 +39,6 @@ Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéfic
 * importer le fichier gensdubien.sql dans la BDD
 * Consulter le navigateur: localhost:8080/gensdubien/
 
-# Fonctionnalitées en cours de développement de cette version
-*Emailing : envoi des emails aux bénévoles
 
 # Exemple d'utilisation
 ### 1- Une fois l'application lancée, vous pouvez accéder à l'application en se connectant via l'un des deux logins suivants :
@@ -48,4 +46,4 @@ login: Mohammed      mot de passe: Alger
 login: Frederic      mot de passe: Paris
 ### 2- Une fois connecté vous pouvez gérer les bénéficiaires , les bénévoles,  les produits collectés , et les événements
 
-# ===================================================
+# =======================================
