@@ -1,8 +1,4 @@
-# gensDuBien_KM
-
-Mon application : GensDuBien 
-
-# Bienvenue sur gensdubien -v1
+# Bienvenue sur gensdubien_KM
 * Date : 30/07/2018
 * Créateurs :  Mohammed KHEZNADJI 
 
@@ -21,7 +17,7 @@ produits d'hygiène., couchage, vetement  )
 -faire le suivi des actions: collecte ou distribution avec la participation des béénévoles.
 
 Elle permet au gérant ou à un bénévole  de gérer les bénévoles, bénéficiares, produits collectés et les événements .
-# ========================================
+# =======================================
 
 # Lancement de l'application
 
